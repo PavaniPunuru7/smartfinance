@@ -1,0 +1,43 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <!-- Loan Application Form Section -->
+<section id="loan-application" style="padding: 40px; background-color: #f9f9f9;">
+    <h2 style="text-align: center; margin-bottom: 20px;">Apply for a Loan</h2>
+    <form id="loan-form" style="max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+        <div style="margin-bottom: 15px;">
+            <label for="loan-amount" style="display: block; margin-bottom: 5px;">Loan Amount</label>
+            <input type="number" id="loan-amount" name="loan-amount" required min="1000" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="business-type" style="display: block; margin-bottom: 5px;">Type of Business</label>
+            <input type="text" id="business-type" name="business-type" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="repayment-period" style="display: block; margin-bottom: 5px;">Repayment Period (months)</label>
+            <input type="number" id="repayment-period" name="repayment-period" required min="1" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+        <button type="submit" style="width: 100%; padding: 10px; background: #2d3e50; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">Submit Application</button>
+    </form>
+</section>
+    </body>
+    <script>
+        document.getElementById('loan-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+    
+            // Basic validation feedback
+            const loanAmount = document.getElementById('loan-amount').value;
+            const businessType = document.getElementById('business-type').value;
+            const repaymentPeriod = document.getElementById('repayment-period').value;
+    
+            if (loanAmount && businessType && repaymentPeriod) {
+                alert('Loan application submitted successfully!');
+                // Here you can add code to send the form data to your backend
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+</html>
