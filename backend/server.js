@@ -14,6 +14,8 @@ app.use(helmet());
 app.use(bodyParser.json());
 
 app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/lend",require("./routes/lendMoneyRoutes"));
+app.use("/api/borrow",require("./routes/borrowMoneyRoutes"));
 
 
 

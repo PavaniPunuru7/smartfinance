@@ -57,7 +57,7 @@ const fullName = document.getElementById('fullName').value;
 const phoneNumber = document.getElementById('phoneNumber').value;
 const password = document.getElementById('password').value;
 
-const response = await fetch('http://localhost:5000/register', {
+const response = await fetch('http://localhost:6000/register', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -65,11 +65,8 @@ const response = await fetch('http://localhost:5000/register', {
     body: JSON.stringify({ fullName, phoneNumber, password })
 });
 
-if (response.ok) {
-    alert('User registered successfully');
-} else {
-    alert('Error registering user');
-}
+const result = await response.json();
+alert(result.message || "Registration failed");
 }
 let currentSlide = 0;
 const slides = document.querySelector('.slides');
